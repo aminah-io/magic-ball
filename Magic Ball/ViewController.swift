@@ -9,12 +9,22 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    @IBOutlet weak var ballAnswer: UIImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        ballAnswer.image = #imageLiteral(resourceName: "Ask")
     }
-
-
+    
+    let ballAnswers = [#imageLiteral(resourceName: "Yes"), #imageLiteral(resourceName: "No"), #imageLiteral(resourceName: "Seven"), #imageLiteral(resourceName: "Absolutely"), #imageLiteral(resourceName: "No chance"), #imageLiteral(resourceName: "Not sure"), #imageLiteral(resourceName: "Dream")]
+    
+    
+    
+    @IBAction func askQuestionButton(_ sender: UIButton) {
+        ballAnswer.image = ballAnswers.randomElement()
+    }
+    
 }
 
